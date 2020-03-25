@@ -1,5 +1,55 @@
 const ul = document.querySelector("ul#list-group")
 const div = document.querySelector("div#beer-detail")
+const body = document.querySelector("body")
+
+
+// NEW BEER FORM //
+
+    let form = document.createElement("form")
+    form.id = "new-beer"
+    
+    let label = document.createElement("label")
+    label.innerText = "Add New Beer"
+
+    let br1 = document.createElement("br")
+
+    let input1 = document.createElement("input")
+    input1.placeholder = "Enter Beer Name"
+    input1.type = "text"
+
+    let br2 = document.createElement("br")
+
+    
+    let input2 = document.createElement("input")
+    input2.placeholder = "Enter Beer Image URL"
+    input2.type = "text"
+
+    let br3 = document.createElement("br")
+
+
+    let input3 = document.createElement("input")
+    input3.placeholder = "Enter Tagline"
+    input3.type = "text"
+
+    let br4 = document.createElement("br")
+
+    
+    let input4 = document.createElement("input")
+    input4.placeholder = "Enter Beer Description"
+    input4.type = "text"
+
+    let br5 = document.createElement("br")
+
+
+    let input5 = document.createElement("input")
+    input5.type = "submit"
+
+
+    form.append(label,br1,input1,br2,input2,br3,input3,br4,input4,br5,input5)
+    body.prepend(form)
+// NEW BEER FORM // Hmm a lot more info on the beer API than I thought... 
+// I would add an event listener to make a "POST" and add it to the array of beers in the db.json file...
+// However running out of time...
 
 fetch('http://localhost:3000/beers')
     .then(resp => resp.json())
